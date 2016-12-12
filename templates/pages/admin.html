@@ -1,0 +1,20 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Users{% endblock %}
+{% block content %}
+
+<div class="page-header">
+  <h1>Admin Panel</h1>
+  <h3>Welcome {{username}}</h3>
+</div>
+<br>
+<br>
+<h4>You can now do important stuff like:</h4>
+<ul>
+  <li><a href="{{url_for('user_details')}}">change user information and passwords</a></li>
+  <li>view sensitive information</li>
+  <li>edit information visible on the website</li>
+  <li>and more...</li>
+</ul>
+
+
+{% endblock %}

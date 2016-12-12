@@ -1,0 +1,66 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<div class="page-header">
+  <center>
+    <h1>Bob's Farming Blog</h1>
+    <br>
+    <br>
+    <img src="/static/img/bob.jpg" alt="" style="border-radius: 50%; width: 300px"/>
+    <br>
+  </center>
+</div>
+<br>
+<center>
+<p class="lead">see some of my blog articles below about chickens, turnips and a herd of other exciting topics!!!!</p>
+</center>
+
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <table class="table">
+        <tr>
+          <td>
+            <img src="/static/img/turnip.png" alt="" style="width:30px"/>
+          </td>
+          <td>
+            <h4 style="text-align: center">10 crazy facts about turnips and why I think they're cool</h4>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <img src="/static/img/tractor.jpg" alt="" style="width:30px"/>
+          </td>
+          <td>
+            <h4 style="text-align: center">which tractor to buy if you wanna have swag</h4>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <img src="/static/img/carrots.png" alt="" style="width:30px"/>
+          </td>
+          <td>
+            <h4 style="text-align: center">why carrots make the best christmas decorations</h4>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <img src="/static/img/chicken.gif" alt="" style="width:30px"/>
+          </td>
+          <td>
+            <h4 style="text-align: center">I increased my chickens' IQ by 30 points with a taylor swift album</h4>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

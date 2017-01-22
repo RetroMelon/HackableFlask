@@ -80,6 +80,7 @@ def populate():
     return "populated with " + str(new_count) + " new, " + str(existing_count) + " existing."
 
 
+#NOTE: this page is intentionally unsecured so that a demonstrator can just check the passwords without looking inside the database manually.
 @app.route('/userdetails')
 def user_details():
     all_people = db.session.query(User).all()
@@ -188,7 +189,7 @@ if not app.debug:
 
 # Default port:
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=8080)
 
 
 # Or specify port manually:

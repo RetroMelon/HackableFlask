@@ -44,3 +44,34 @@ class Blog(Base):
 
 # Create tables.
 Base.metadata.create_all(bind=engine)
+
+#The population script to add the default users to the database.
+def add_or_create_person(**kwargs):
+    person = db.session.query(User).filter_by(**kwargs).first()
+    if person:
+        return (False, person)
+    else:
+        person = User(**kwargs)
+        db.session.add(person)
+        db.session.commit()
+        return (True, person)
+
+def populate():
+    people = [
+        {"name": "bob", "email": "bob@farming.com", "password": "chickens123"},
+        {"name": "jane", "email": "jane@farming.com", "password": "wellyboots"},
+        {"name": "casey", "email": "casey@barndoors.com", "password": "pinetrees"},
+    ]
+
+    new_count = 0
+    existing_count = 0
+    for person in people:
+        new, person = add_or_create_person(**person)
+        if new:
+            new_count += 1
+        else:
+            existing_count += 1
+
+    return "populated with " + str(new_count) + " new, " + str(existing_count) + " existing."
+
+print populate()
